@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHomework", "CSharpHom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Task1\Task1.csproj", "{FF9F4ECC-2C03-48FB-8AE2-F7D066FFBDB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.test", "Task1.test\Task1.test.csproj", "{5E0DBB62-95E6-4C6C-9B26-05ABB4E66502}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.Test1", "Task1.Test1\Task1.Test1.csproj", "{5E0DBB62-95E6-4C6C-9B26-05ABB4E66502}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.ConsoleUI", "Task1.ConsoleUI\Task1.ConsoleUI.csproj", "{DC15AB5F-7F9E-48E2-8971-7362347E7BC8}"
 EndProject
