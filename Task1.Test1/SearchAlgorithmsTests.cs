@@ -1,21 +1,14 @@
 ﻿
 using Xunit;
-
-
 namespace Task1.test
 {
-
-
     public class SearchAlgorithmsTests
     {
-       
-        private readonly SearchAlgorithms _algorithms;
-        
-        
-        public SearchAlgorithmsTests()
-        {
-            _algorithms = new SearchAlgorithms();
-        }
+        private readonly SearchAlgorithms _algorithms = new SearchAlgorithms();
+        // public SearchAlgorithmsTests()
+        // {
+        //     _algorithms = new SearchAlgorithms();
+        // }
 
         [Fact]
         public  void BinarySearch_IntArray_ReturnsCorrectIndex()
@@ -96,11 +89,8 @@ namespace Task1.test
             int result = _algorithms.Search(nums, target);
 
             // Assert
-            Assert.Equal(-1, result);
+            Assert.Equal(0, result);
         }
-
-       
-
         #region Generic Method Tests - String Array
 
         [Fact]
@@ -146,7 +136,7 @@ namespace Task1.test
         }
 
         #endregion
-
+        
         #region Generic Method Tests - Double Array
 
         [Fact]

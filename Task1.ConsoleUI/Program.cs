@@ -1,13 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using Task1;
 
 namespace Task1.ConsoleUI
 {
-    class Program
+    internal class Program
     {
         private static readonly SearchAlgorithms _searchAlgorithms = new SearchAlgorithms();
+        
+        // Словарь для обработки ответов yes/no с игнорированием регистра
+        private static readonly Dictionary<string, bool> YesNoAnswers = new(StringComparer.OrdinalIgnoreCase)
+        {
+            ["yes"] = true,
+            ["y"] = true,
+            ["да"] = true,
+            ["д"] = true,
+            ["no"] = false,
+            ["n"] = false,
+            ["нет"] = false,
+            ["н"] = false
+        };
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("=== Программа бинарного поиска ===");
             Console.WriteLine("Добро пожаловать!");
@@ -65,7 +79,7 @@ namespace Task1.ConsoleUI
             while (true)
             {
                 Console.Write("Введите размер массива (больше 0): ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()?.Trim();
 
                 if (int.TryParse(input, out int size) && size > 0)
                 {
@@ -86,7 +100,7 @@ namespace Task1.ConsoleUI
                 while (true)
                 {
                     Console.Write($"Элемент {i + 1}: ");
-                    string input = Console.ReadLine();
+                    string input = Console.ReadLine()?.Trim();
 
                     if (int.TryParse(input, out int element))
                     {
@@ -118,7 +132,7 @@ namespace Task1.ConsoleUI
             while (true)
             {
                 Console.Write("Введите искомый элемент: ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()?.Trim();
 
                 if (int.TryParse(input, out int target))
                 {
@@ -155,23 +169,22 @@ namespace Task1.ConsoleUI
                 Console.Write("Хотите выполнить еще один поиск? (y/n): ");
                 string input = Console.ReadLine()?.ToLower().Trim();
 
-                switch (input)
+                if (string.IsNullOrEmpty(input))
                 {
-                    case "y":
-                    case "yes":
-                    case "да":
-                    case "д":
-                        Console.WriteLine();
-                        return true;
-                    case "n":
-                    case "no":
-                    case "нет":
-                    case "н":
-                        return false;
-                    default:
-                        Console.WriteLine("❌ Введите 'y' для продолжения или 'n' для выхода.");
-                        break;
+                    Console.WriteLine("❌ Введите 'y' для продолжения или 'n' для выхода.");
+                    continue;
                 }
+
+                if (YesNoAnswers.TryGetValue(input, out bool shouldContinue))
+                {
+                    if (shouldContinue)
+                    {
+                        Console.WriteLine();
+                    }
+                    return shouldContinue;
+                }
+
+                Console.WriteLine("❌ Введите 'y' для продолжения или 'n' для выхода.");
             }
         }
     }
