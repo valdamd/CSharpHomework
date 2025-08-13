@@ -44,7 +44,6 @@ internal sealed record SearchAlgorithms
             return -1;
         }
 
-        // Используем переданный делегат сравнения или стандартный компарер
         var comparer = comparison != null ? Comparer<T>.Create(comparison) : Comparer<T>.Default;
 
         var leftIndex = 0;
@@ -53,8 +52,6 @@ internal sealed record SearchAlgorithms
         while (leftIndex <= rightIndex)
         {
             var middleIndex = leftIndex + ((rightIndex - leftIndex) / 2);
-
-            // Используем кастомную логику сравнения
             var comparisonResult = comparer.Compare(target, list[middleIndex]);
 
             if (comparisonResult > 0)
@@ -67,10 +64,10 @@ internal sealed record SearchAlgorithms
             }
             else
             {
-                return middleIndex; // Элемент найден
+                return middleIndex;
             }
         }
 
-        return -1; // Элемент не найден
+        return -1;
     }
 }

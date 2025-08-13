@@ -10,7 +10,6 @@ internal sealed class Program
 {
     private static readonly SearchAlgorithms SearchAlgorithms = new SearchAlgorithms();
 
-    // Словарь для обработки ответов yes/no с игнорированием регистра
     private static readonly Dictionary<string, bool> YesNoAnswers = new(StringComparer.OrdinalIgnoreCase)
     {
         ["yes"] = true,
