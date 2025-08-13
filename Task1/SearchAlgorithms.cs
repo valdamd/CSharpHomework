@@ -1,89 +1,76 @@
-﻿namespace Task1
+﻿// <copyright file="SearchAlgorithms.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
+namespace Task1;
+
+internal sealed record SearchAlgorithms
 {
-    public sealed class SearchAlgorithms
+    public int Search(int[]? array, int target)
     {
-        public int Search(int[] nums, int target)
+        if (array == null || array.Length == 0)
         {
-            return BinarySearch(nums, target, 0, nums.Length - 1);
+            return -1;
         }
 
-        private int BinarySearch(int[] nums, int target, int left, int right)
+        return BinarySearch(array, target, 0, array.Length - 1);
+    }
+
+    public static int BinarySearch(int[] nums, int target, int left, int right)
+    {
+        if (left > right || left < 0 || right >= nums.Length)
         {
-            if (left > right)
-                return -1;
-
-            var mid = left + (right - left) / 2;
-            if (nums[mid] == target)
-            {
-                return mid;
-            }
-
-            if (nums[mid] < target)
-            {
-                return BinarySearch(nums, target, mid + 1, right);
-            }
-
-            return BinarySearch(nums, target, left, mid - 1);
+            return -1;
         }
 
-        //     public static int BinarySearch<T>(List<T> list, T target) where T : IComparable<T>
-        //     {
-        //         if (list == null || list.Count == 0) return -1;
-        //
-        //         var leftIndex = 0;
-        //         var rightIndex = list.Count - 1;
-        //         while (leftIndex <= rightIndex)
-        //         {
-        //             int middleIndex = leftIndex + (leftIndex - rightIndex) / 2;
-        //             if (target.CompareTo(list[middleIndex]) > 0)
-        //             {
-        //                 leftIndex = middleIndex + 1;
-        //                 continue;
-        //             }
-        //
-        //             if (target.CompareTo(list[middleIndex]) < 0)
-        //             {
-        //                 rightIndex = middleIndex - 1;
-        //                 continue;
-        //             }
-        //             return middleIndex;
-        //         }
-        //         return -1;
-        //     }
-        // }
-
-        public static int BinarySearch1<T>(IReadOnlyList<T> list, T target, Comparison<T>? comparison = null)
+        var mid = left + ((right - left) / 2);
+        if (nums[mid] == target)
         {
-            if (list == null || list.Count == 0) return -1;
-
-            // Используем переданный делегат сравнения или стандартный компарер
-            var comparer = comparison != null ? Comparer<T>.Create(comparison) : Comparer<T>.Default;
-
-            int leftIndex = 0;
-            int rightIndex = list.Count - 1;
-
-            while (leftIndex <= rightIndex)
-            {
-                int middleIndex = leftIndex + (rightIndex - leftIndex) / 2;
-
-                // Используем кастомную логику сравнения
-                int comparisonResult = comparer.Compare(target, list[middleIndex]);
-
-                if (comparisonResult > 0)
-                {
-                    leftIndex = middleIndex + 1;
-                }
-                else if (comparisonResult < 0)
-                {
-                    rightIndex = middleIndex - 1;
-                }
-                else
-                {
-                    return middleIndex; // Элемент найден
-                }
-            }
-
-            return -1; // Элемент не найден
+            return mid;
         }
+
+        if (nums[mid] < target)
+        {
+            return BinarySearch(nums, target, mid + 1, right);
+        }
+
+        return BinarySearch(nums, target, left, mid - 1);
+    }
+
+    public static int BinarySearch1<T>(IReadOnlyList<T> list, T target, Comparison<T>? comparison = null)
+    {
+        if (list.Count == 0)
+        {
+            return -1;
+        }
+
+        // Используем переданный делегат сравнения или стандартный компарер
+        var comparer = comparison != null ? Comparer<T>.Create(comparison) : Comparer<T>.Default;
+
+        var leftIndex = 0;
+        var rightIndex = list.Count - 1;
+
+        while (leftIndex <= rightIndex)
+        {
+            var middleIndex = leftIndex + ((rightIndex - leftIndex) / 2);
+
+            // Используем кастомную логику сравнения
+            var comparisonResult = comparer.Compare(target, list[middleIndex]);
+
+            if (comparisonResult > 0)
+            {
+                leftIndex = middleIndex + 1;
+            }
+            else if (comparisonResult < 0)
+            {
+                rightIndex = middleIndex - 1;
+            }
+            else
+            {
+                return middleIndex; // Элемент найден
+            }
+        }
+
+        return -1; // Элемент не найден
     }
 }

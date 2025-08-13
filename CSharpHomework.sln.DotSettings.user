@@ -1,5 +1,14 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AConsole_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003Ffd57398b7dc3a8ce7da2786f2c67289c3d974658a9e90d0c1e84db3d965fbf1_003FConsole_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AInt32_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2025_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fa882d183338544fdbcbdfc7b6d3dcb78916630765551644a221b5be9c45a121b_003FInt32_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=C91202EE_002D3738_002D4CF8_002DBABC_002D5050262D5EFB_002Ff_003ASearchAlgorithms_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Users\White\RiderProjects\CSharpHomework\Task1.Test1\bin\Debug\net9.0\Microsoft.TestPlatform.CommunicationUtilities.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\White\RiderProjects\CSharpHomework\Task1.Test1\bin\Debug\net9.0\Task1.Test1.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/Environment/Hierarchy/Build/BuildTool/MsBuildSolutionLoadingOrderingEnabled/@EntryValue">True</s:Boolean>
+	
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/SolutionBuilderNext/OutputVerbosityLevel/@EntryValue">Normal</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7e00aca9_002D1f15_002D403c_002Da1f0_002D7d93b9bfaf53/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from SearchAlgorithmsTests.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;ProjectFile&gt;5E0DBB62-95E6-4C6C-9B26-05ABB4E66502/f:SearchAlgorithmsTests.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;ProjectFile&gt;E4410B3C-4296-45B4-8B5A-9059C993D186/f:SearchAlgorithmsTests.cs&lt;/ProjectFile&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
