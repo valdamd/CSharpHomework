@@ -6,7 +6,7 @@ namespace Task1.ConsoleUI;
 
 using System.Globalization;
 
-internal sealed class Program
+internal static class Program
 {
     private static readonly SearchAlgorithms SearchAlgorithms = new SearchAlgorithms();
 
